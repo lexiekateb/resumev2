@@ -32,8 +32,8 @@ const papers = [
     title: "More and Scammier Ads: The Perils of YouTube's Ad Privacy Settings",
     venue: "PoPETs 2025",
     link: "https://petsymposium.org/popets/2025/popets-2025-0169.pdf",
-  },
-];
+    authors: "Cat Mai, Bruno Coelho∗, Julia Kieserman∗, Lexie Matsumoto∗, Kyle Spinelli∗, Eric Yang∗, Athanasios Andreou, Rachel Greenstadt, Tobias Lauinger, Damon McCoy",
+}];
 
 const projects = [
   {
@@ -309,6 +309,9 @@ export default function Home() {
                   <p className="mt-2 text-sm uppercase tracking-[0.25em] text-[#b87d8a]">
                     {paper.venue}
                   </p>
+                    <p className="mt-4 text-xs leading-relaxed text-[#3e2f36]">
+                    <i>{paper.authors}</i>
+                    </p>
                   <a
                     className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#e3bfc7] px-4 py-2 font-mono text-xs uppercase tracking-[0.25em] text-[#4f3a43] transition hover:border-[#b87d8a] hover:text-[#b87d8a]"
                     href={paper.link}
