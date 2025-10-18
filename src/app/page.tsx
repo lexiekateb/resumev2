@@ -1,4 +1,16 @@
+'use client';
+
 import Image from "next/image";
+
+import { useState } from "react";
+
+const navLinks = [
+  { label: "home", href: "#home" },
+  { label: "about me", href: "#about" },
+  { label: "research", href: "#research" },
+  { label: "papers", href: "#papers" },
+  { label: "contact", href: "#contact" },
+];
 
 const education = [
   {
@@ -29,32 +41,36 @@ const projects = [
     timeframe: "Aug 2024 — Present",
     description:
       "Analyzing content volume, polarization, and platform amplification patterns to understand how TikTok shapes divisive discourse and civic engagement.",
-    tags: ["social media", "policy", "data analysis"],
+    tags: ["social media", "polarization", "mixed methods"],
   },
   {
     title: "Sparse Model Graphing",
     timeframe: "Aug 2023 — May 2024",
     description:
       "Developed an interactive front-end that visualizes variable graphs produced by a 98% accurate Graph Neural Network classifier for sparse matrix detection.",
-    tags: ["visualization", "graph neural networks", "full-stack"],
+    tags: ["visualization", "graph neural networks"],
   },
   {
     title: "Autonomous Driving Vision",
     timeframe: "Aug 2021 — May 2022",
     description:
       "Enhanced object detection pipelines for autonomous vehicles using OpenCV and Hough line detection, integrating outputs with LiDAR to reduce collision risk.",
-    tags: ["computer vision", "robotics", "opencv"],
+    tags: ["computer vision", "object detection", "opencv"],
   },
   {
     title: "OU Data Analytics Lab",
     timeframe: "Jan 2021 — May 2021",
     description:
-      "Partnered with a PhD researcher to investigate Simpson’s paradox in public datasets, surfacing misuse risks and crafting guidelines for responsible analysis.",
-    tags: ["statistics", "research methods", "ethics"],
+      "Partnered with a PhD researcher to investigate Simpson's paradox in public datasets, surfacing misuse risks and crafting guidelines for responsible analysis.",
+    tags: ["statistics", "ethics"],
   },
 ];
 
 export default function Home() {
+  const [navOpen, setNavOpen] = useState(false);
+
+  const closeNav = () => setNavOpen(false);
+
   return (
     <div
       className="min-h-screen bg-[#fdf8f5] text-[#28252b]"
@@ -66,47 +82,61 @@ export default function Home() {
     >
       <div className="relative mx-auto flex min-h-screen max-w-5xl flex-col gap-24 px-6 pb-24 pt-10 sm:px-10 sm:pt-14">
         <header className="sticky top-6 z-20 mx-auto w-full max-w-4xl">
-          <nav className="flex items-center justify-between rounded-full border border-[#e3bfc7] bg-[#f4dede]/80 px-6 py-3 shadow-sm backdrop-blur">
-            <span className="font-mono text-xs uppercase tracking-[0.35em] text-[#b87d8a]">
-              Lexie Matsumoto
-            </span>
-            <ul className="flex items-center gap-6 font-mono text-sm uppercase tracking-[0.2em] text-[#4f3a43]">
-              <li>
-                <a className="transition-colors hover:text-[#b87d8a]" href="#home">
-                  home
-                </a>
-              </li>
-              <li>
-                <a className="transition-colors hover:text-[#b87d8a]" href="#about">
-                  about me
-                </a>
-              </li>
-              <li>
-                <a
-                  className="transition-colors hover:text-[#b87d8a]"
-                  href="#research"
-                >
-                  research
-                </a>
-              </li>
-              <li>
-                <a
-                  className="transition-colors hover:text-[#b87d8a]"
-                  href="#papers"
-                >
-                  papers
-                </a>
-              </li>
-              <li>
-                <a
-                  className="transition-colors hover:text-[#b87d8a]"
-                  href="#contact"
-                >
-                  contact
-                </a>
-              </li>
-            </ul>
-          </nav>
+          <div className="rounded-3xl border border-[#e3bfc7] bg-[#f4dede]/80 px-6 py-3 shadow-sm backdrop-blur">
+            <nav className="flex items-center justify-between">
+              <span className="font-mono text-xs uppercase tracking-[0.35em] text-[#b87d8a]">
+                Lexie Matsumoto
+              </span>
+              <button
+                type="button"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-[#e3bfc7] text-[#4f3a43] transition hover:border-[#b87d8a] hover:text-[#b87d8a] sm:hidden"
+                aria-label="Toggle navigation"
+                aria-expanded={navOpen}
+                onClick={() => setNavOpen((prev) => !prev)}
+              >
+                <span className="sr-only">Menu</span>
+                {navOpen ? (
+                  <span className="text-xl leading-none">×</span>
+                ) : (
+                  <span className="flex flex-col items-center justify-center gap-1.5">
+                    <span className="block h-0.5 w-5 rounded-full bg-current" />
+                    <span className="block h-0.5 w-5 rounded-full bg-current" />
+                    <span className="block h-0.5 w-5 rounded-full bg-current" />
+                  </span>
+                )}
+              </button>
+              <ul className="hidden items-center gap-6 font-mono text-sm uppercase tracking-[0.2em] text-[#4f3a43] sm:flex">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      className="transition-colors hover:text-[#b87d8a]"
+                      href={link.href}
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            {navOpen ? (
+              <ul className="mt-4 flex flex-col gap-2 rounded-2xl border border-[#e3bfc7] bg-white/90 p-4 font-mono text-sm uppercase tracking-[0.2em] text-[#4f3a43] shadow-[6px_6px_0_0_rgba(227,191,199,0.35)] sm:hidden">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      className="flex items-center justify-between rounded-xl px-3 py-2 transition hover:bg-[#f8e3e8]"
+                      href={link.href}
+                      onClick={closeNav}
+                    >
+                      {link.label}
+                      <span aria-hidden className="text-[#b87d8a]">
+                        →
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+          </div>
         </header>
 
         <main className="flex flex-col gap-24">
