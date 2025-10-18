@@ -294,8 +294,7 @@ export default function Home() {
               Published Works
             </h2>
             <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#3e2f36]">
-              Below are some of my published research papers. Feel free to
-              explore them to learn more about my work and contributions to the
+              Below are some of my published research papers. Explore them to learn more about my work and contributions to the
               field.
             </p>
             <ul className="mt-8 space-y-6">
@@ -335,7 +334,7 @@ export default function Home() {
             </h2>
             <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#4f3a43]">
               I'm always eager to meet researchers, legislators, and organizers
-              who are exploring similar questions. Feel free to reach out below!
+              who are exploring similar questions. Reach out below!
             </p>
             <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
               <a
