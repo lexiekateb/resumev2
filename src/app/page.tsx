@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navLinks = [
   { label: "home", href: "#home" },
@@ -68,8 +68,38 @@ const projects = [
 
 export default function Home() {
   const [navOpen, setNavOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   const closeNav = () => setNavOpen(false);
+
+  useEffect(() => {
+    const sectionIds = navLinks.map((link) => link.href.slice(1));
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 160;
+      let currentSection = sectionIds[0] ?? "home";
+
+      for (const id of sectionIds) {
+        const section = document.getElementById(id);
+        if (section && section.offsetTop <= scrollPosition) {
+          currentSection = section.id;
+        }
+      }
+
+      setActiveSection((prev) =>
+        prev === currentSection ? prev : currentSection,
+      );
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
 
   return (
     <div
@@ -106,34 +136,46 @@ export default function Home() {
                 )}
               </button>
               <ul className="hidden items-center gap-6 font-mono text-sm uppercase tracking-[0.2em] text-[#4f3a43] sm:flex">
-                {navLinks.map((link) => (
-                  <li key={link.href}>
-                    <a
-                      className="transition-colors hover:text-[#b87d8a]"
-                      href={link.href}
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
+                {navLinks.map((link) => {
+                  const sectionId = link.href.slice(1);
+                  const isActive = activeSection === sectionId;
+
+                  return (
+                    <li key={link.href}>
+                      <a
+                        className={`transition-colors hover:text-[#b87d8a] ${isActive ? "text-[#b87d8a]" : ""}`}
+                        href={link.href}
+                        aria-current={isActive ? "page" : undefined}
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </nav>
             {navOpen ? (
               <ul className="mt-4 flex flex-col gap-2 rounded-2xl border border-[#e3bfc7] bg-white/90 p-4 font-mono text-sm uppercase tracking-[0.2em] text-[#4f3a43] shadow-[6px_6px_0_0_rgba(227,191,199,0.35)] sm:hidden">
-                {navLinks.map((link) => (
-                  <li key={link.href}>
-                    <a
-                      className="flex items-center justify-between rounded-xl px-3 py-2 transition hover:bg-[#f8e3e8]"
-                      href={link.href}
-                      onClick={closeNav}
-                    >
-                      {link.label}
-                      <span aria-hidden className="text-[#b87d8a]">
-                        →
-                      </span>
-                    </a>
-                  </li>
-                ))}
+                {navLinks.map((link) => {
+                  const sectionId = link.href.slice(1);
+                  const isActive = activeSection === sectionId;
+
+                  return (
+                    <li key={link.href}>
+                      <a
+                        className={`flex items-center justify-between rounded-xl px-3 py-2 transition hover:bg-[#f8e3e8] ${isActive ? "bg-[#f8e3e8] text-[#b87d8a]" : ""}`}
+                        href={link.href}
+                        onClick={closeNav}
+                        aria-current={isActive ? "page" : undefined}
+                      >
+                        {link.label}
+                        <span aria-hidden className="text-[#b87d8a]">
+                          →
+                        </span>
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             ) : null}
           </div>
