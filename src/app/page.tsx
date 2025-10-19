@@ -153,8 +153,8 @@ export default function Home() {
               </h1>
               <div className="mt-6 space-y-5 text-base leading-relaxed text-[#3e2f36] sm:text-lg">
                 <p>
-                  I'm a PhD student at New York University advised by Damon McCoy. 
-                  I am part of the Cybersecurity for Democracy lab, a multi-university center for research-driven policy.
+                  I'm a PhD student at New York University advised by <u><a href="https://damonmccoy.com/" target="_blank">Damon McCoy</a></u>. 
+                  I am part of the <u><a href="https://cybersecurityfordemocracy.org/" target="_blank">Cybersecurity for Democracy</a></u> lab, a multi-university center for research-driven policy.
                 </p>
                 <p> 
                 My research interests are social media harms and security, ethical AI, and other topics 
@@ -367,7 +367,7 @@ export default function Home() {
         </main>
 
         <footer className="pb-10 text-center font-mono text-xs uppercase tracking-[0.35em] text-[#b87d8a]">
-          © {new Date().getFullYear()} Lexie Matsumoto — designed with care in NYC. Feel free to fork this <u><a href="https://github.com/lexiekateb/resumev2" target="_blank">repo</a></u>.
+          © {new Date().getFullYear()} Lexie Matsumoto. If you like this site, feel free to fork my <u><a href="https://github.com/lexiekateb/resumev2" target="_blank">repo</a></u>.
         </footer>
       </div>
     </div>
