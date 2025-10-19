@@ -142,7 +142,7 @@ export default function Home() {
         <main className="flex flex-col gap-24">
           <section
             id="home"
-            className="grid gap-10 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] md:items-center"
+            className="scroll-mt-32 grid gap-10 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] md:items-center"
           >
             <div className="relative rounded-[32px] border border-[#e3bfc7] bg-white/90 p-10 shadow-[12px_12px_0_0_rgba(227,191,199,0.55)]">
               <span className="font-mono text-xs uppercase tracking-[0.35em] text-[#b87d8a]">
@@ -200,7 +200,7 @@ export default function Home() {
 
           <section
             id="about"
-            className="rounded-[32px] border border-[#e3bfc7] bg-white/85 p-10 shadow-[12px_12px_0_0_rgba(227,191,199,0.35)]"
+            className="scroll-mt-32 rounded-[32px] border border-[#e3bfc7] bg-white/85 p-10 shadow-[12px_12px_0_0_rgba(227,191,199,0.35)]"
           >
             <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
               <div className="max-w-2xl space-y-4">
@@ -242,7 +242,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="research" className="space-y-10">
+          <section id="research" className="scroll-mt-32 space-y-10">
             <div className="flex flex-col gap-3">
               <span className="font-mono text-xs uppercase tracking-[0.35em] text-[#b87d8a]">
                 Research spotlight
@@ -285,7 +285,7 @@ export default function Home() {
 
           <section
             id="papers"
-            className="rounded-[32px] border border-[#e3bfc7] bg-white/90 p-10 shadow-[12px_12px_0_0_rgba(227,191,199,0.35)]"
+            className="scroll-mt-32 rounded-[32px] border border-[#e3bfc7] bg-white/90 p-10 shadow-[12px_12px_0_0_rgba(227,191,199,0.35)]"
           >
             <span className="font-mono text-xs uppercase tracking-[0.35em] text-[#b87d8a]">
               Selected papers
@@ -327,13 +327,13 @@ export default function Home() {
 
           <section
             id="contact"
-            className="rounded-[32px] border border-[#e3bfc7] bg-[#f8e3e8]/70 p-10 shadow-[12px_12px_0_0_rgba(227,191,199,0.35)]"
+            className="scroll-mt-32 rounded-[32px] border border-[#e3bfc7] bg-[#f8e3e8]/70 p-10 shadow-[12px_12px_0_0_rgba(227,191,199,0.35)]"
           >
             <span className="font-mono text-xs uppercase tracking-[0.35em] text-[#b87d8a]">
               Contact
             </span>
             <h2 className="mt-4 font-mono text-3xl text-[#241820]">
-              Let's collaborate
+              Let's collaborate!
             </h2>
             <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#4f3a43]">
               I'm always eager to meet researchers, legislators, and organizers
