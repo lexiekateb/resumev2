@@ -33,7 +33,14 @@ const papers = [
     venue: "PoPETs 2025",
     link: "https://petsymposium.org/popets/2025/popets-2025-0169.pdf",
     authors: "Cat Mai, Bruno Coelho∗, Julia Kieserman∗, Lexie Matsumoto∗, Kyle Spinelli∗, Eric Yang∗, Athanasios Andreou, Rachel Greenstadt, Tobias Lauinger, Damon McCoy",
-}];
+},
+{
+  title: "Issues with the TikTok Research API and its effect on researchers",
+  venue: "Cybersecurity for Democracy",
+  link: "https://cybersecurityfordemocracy.org/issues-with-the-tiktok-research-api",
+  authors: "Bruno Coelho, Lexie Matsumoto, Dominique Geissler"
+}
+];
 
 const projects = [
   {
@@ -190,8 +197,8 @@ export default function Home() {
               <span className="font-mono text-xs uppercase tracking-[0.35em] text-[#b87d8a]">
                 Introduction
               </span>
-              <h1 className="mt-6 font-mono text-4xl leading-tight text-[#241820] sm:text-5xl">
-                Hi, I'm Lexie.
+              <h1 className="mt-6 font-mono text-4xl leading-tight text-[#241820] sm:text-3xl">
+                Hi, I'm Lexie Matsumoto.
               </h1>
               <div className="mt-6 space-y-5 text-base leading-relaxed text-[#3e2f36] sm:text-lg">
                 <p>
@@ -290,7 +297,7 @@ export default function Home() {
                 Research spotlight
               </span>
               <h2 className="font-mono text-3xl text-[#241820]">
-                Current projects
+                Projects
               </h2>
             </div>
             <div className="grid gap-6 md:grid-cols-2">
@@ -330,13 +337,13 @@ export default function Home() {
             className="scroll-mt-32 rounded-[32px] border border-[#e3bfc7] bg-white/90 p-10 shadow-[12px_12px_0_0_rgba(227,191,199,0.35)]"
           >
             <span className="font-mono text-xs uppercase tracking-[0.35em] text-[#b87d8a]">
-              Selected papers
+              Selected Publications
             </span>
             <h2 className="mt-4 font-mono text-3xl text-[#241820]">
               Published Works
             </h2>
             <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#3e2f36]">
-              Below are some of my published research papers. Explore them to learn more about my work and contributions to the
+              Below are some of my published research papers and articles. Explore them to learn more about my work and contributions to the
               field.
             </p>
             <ul className="mt-8 space-y-6">
@@ -360,7 +367,7 @@ export default function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    read paper
+                    read
                   </a>
                 </li>
               ))}
@@ -407,7 +414,7 @@ export default function Home() {
             </div>
           </section>
         </main>
-
+        <br/>
         <footer className="pb-10 text-center font-mono text-xs uppercase tracking-[0.35em] text-[#b87d8a]">
           © {new Date().getFullYear()} Lexie Matsumoto. If you like this site, feel free to fork my <u><a href="https://github.com/lexiekateb/resumev2" target="_blank">repo</a></u>.
         </footer>
