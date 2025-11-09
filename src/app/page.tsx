@@ -44,6 +44,13 @@ const papers = [
 
 const projects = [
   {
+    title: "Pen Testing Child Safety Features",
+    timeframe:"Nov 2025 - Present",
+    description: 
+      "Identifying social media child safety features with the goal of developing pen tests to audit the effectiveness of said advertised tools.",
+    tags: ["adversarial testing", "child safety", "social media"],
+    },
+  {
     title: "TikTok Polarization",
     timeframe: "Aug 2024 — Present",
     description:
@@ -300,34 +307,34 @@ export default function Home() {
                 Projects
               </h2>
             </div>
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="grid gap-4 md:grid-cols-2">
             {projects.map((project) => (
-                <article
-                  key={project.title}
-                  className="flex h-full flex-col gap-4 rounded-[28px] border border-[#e3bfc7] bg-white/85 p-6 shadow-[8px_8px_0_0_rgba(227,191,199,0.35)]"
-                >
-                  <div>
-                    <h3 className="font-mono text-xl text-[#241820]">
-                      {project.title}
-                    </h3>
-                    <p className="mt-1 font-mono text-xs uppercase tracking-[0.25em] text-[#b87d8a]">
-                      {project.timeframe}
-                    </p>
-                  </div>
-                  <p className="text-sm leading-relaxed text-[#3e2f36]">
-                    {project.description}
-                  </p>
-                  <ul className="mt-auto flex flex-wrap gap-2 font-mono text-xs uppercase tracking-[0.2em] text-[#b87d8a]">
-                    {project.tags.map((tag) => (
-                      <li
-                        key={tag}
-                        className="rounded-full border border-[#e3bfc7] px-3 py-1"
-                      >
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
-                </article>
+              <article
+                key={project.title}
+                className="flex h-full flex-col gap-3 rounded-[20px] border border-[#e3bfc7] bg-white/85 p-4 shadow-[6px_6px_0_0_rgba(227,191,199,0.3)]"
+              >
+                <div>
+                <h3 className="font-mono text-lg text-[#241820]">
+                  {project.title}
+                </h3>
+                <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-[#b87d8a]">
+                  {project.timeframe}
+                </p>
+                </div>
+                <p className="text-sm leading-relaxed text-[#3e2f36]">
+                {project.description}
+                </p>
+                <ul className="mt-auto flex flex-wrap gap-1 font-mono text-[10px] uppercase tracking-[0.15em] text-[#b87d8a]">
+                {project.tags.map((tag) => (
+                  <li
+                  key={tag}
+                  className="rounded-full border border-[#e3bfc7] px-2 py-0.5"
+                  >
+                  {tag}
+                  </li>
+                ))}
+                </ul>
+              </article>
               ))}
             </div>
           </section>
