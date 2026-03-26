@@ -29,6 +29,12 @@ const education = [
 
 const papers = [
   {
+    title: "Majority Rules: Polarizing Content Dissemination and User Experience on TikTok",
+    venue: "Journal of Quantitative Description: Digital Media",
+    link: "https://journalqd.org/article/view/9515",
+    authors: "Lexie Matsumoto, Bruno Coelho, Tobias Lauinger, Laura Edelson, Damon McCoy",
+  },
+  {
     title: "More and Scammier Ads: The Perils of YouTube's Ad Privacy Settings",
     venue: "PoPETs 2025",
     link: "https://petsymposium.org/popets/2025/popets-2025-0169.pdf",
