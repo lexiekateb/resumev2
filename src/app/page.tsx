@@ -58,7 +58,7 @@ const projects = [
     },
   {
     title: "TikTok Polarization",
-    timeframe: "Aug 2024 — Present",
+    timeframe: "Aug 2024 — Dec 2025",
     description:
       "Analyzing content volume, polarization, and platform amplification patterns to understand how TikTok shapes divisive discourse and civic engagement.",
     tags: ["social media", "polarization", "mixed methods"],
