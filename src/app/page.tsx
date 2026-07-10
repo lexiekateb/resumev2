@@ -29,6 +29,12 @@ const education = [
 
 const papers = [
   {
+    title: "Broken, Buried, or Missing: Anatomies of Failure (and Success) of Social Media Child Safety Features",
+    venue: "Cybersafety Research Center",
+    link: "https://cybersafetyresearch.org/broken_buried_missing.pdf",
+    authors: "Lexie Matsumoto, Abdulraheem Arar, Arturo Bejar, Laura Edelson, Damon McCoy",
+  },
+  {
     title: "Majority Rules: Polarizing Content Dissemination and User Experience on TikTok",
     venue: "Journal of Quantitative Description: Digital Media",
     link: "https://journalqd.org/article/view/9515",
@@ -39,12 +45,6 @@ const papers = [
     venue: "PoPETs 2025",
     link: "https://petsymposium.org/popets/2025/popets-2025-0169.pdf",
     authors: "Cat Mai, Bruno Coelho∗, Julia Kieserman∗, Lexie Matsumoto∗, Kyle Spinelli∗, Eric Yang∗, Athanasios Andreou, Rachel Greenstadt, Tobias Lauinger, Damon McCoy",
-},
-{
-  title: "Issues with the TikTok Research API and its effect on researchers",
-  venue: "Cybersecurity for Democracy",
-  link: "https://cybersecurityfordemocracy.org/issues-with-the-tiktok-research-api",
-  authors: "Bruno Coelho, Lexie Matsumoto, Dominique Geissler"
 }
 ];
 
